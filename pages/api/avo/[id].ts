@@ -1,6 +1,6 @@
 import DB from './../../../database/db';
 import { NextApiRequest, NextApiResponse } from "next";
-const allAvos = async (request: NextApiRequest, response: NextApiResponse) => {
+const oneAvo = async (request: NextApiRequest, response: NextApiResponse) => {
   const db = new DB();
   const id = request.query.id;
   const entry = await db.getById(id as string);
@@ -11,4 +11,4 @@ const allAvos = async (request: NextApiRequest, response: NextApiResponse) => {
   }))
 }
 
-export default allAvos;
+export default oneAvo;
