@@ -9,17 +9,17 @@ const ProductPage = () => {
     query: { id },
   } = useRouter()
 
-  useEffect(() => {
-      window.fetch(`/api/avo/${id}`)
+useEffect(() => {
+        window.fetch(`/api/avo/${id}`)
         .then((res) => res.json())
         .then(({ data }) => setProduct(data))
-  }, [id])
+}, [id])
 
   return (
     <section>
-      <h1>Página producto:</h1>
-      <h2>{product?.name}</h2>
-      <h2>{id}</h2>
+    <h1>Página producto:</h1>
+    <h2>{product?.name}</h2>
+    <h2>{id}</h2>
     </section>
   )
 }
