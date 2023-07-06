@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header/Header'
+import ProductList from '@components/ProductList/ProductList'
 const HomePage = () => {
   const [products, setProducts] = useState<TProduct[]>([])
   useEffect(() => {
@@ -14,10 +15,7 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <div>Products</div>
-      {products.map((avo, index) => (
-        <h2 key={index}>{avo.name}</h2>
-      ))}
+      <ProductList products={products} />
     </div>
   )
 }
