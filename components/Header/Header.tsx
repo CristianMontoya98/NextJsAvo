@@ -7,7 +7,7 @@ import ModalHeader from './ModalHeader'
 
 const Header = () => {
   const [visible, setVisible] = useState(true)
-  const [meMori, setMeMori] = useState(false)
+  const [isDead, setIsDead] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const [count, setCount] = useState(0)
 
@@ -20,14 +20,14 @@ const Header = () => {
 
   useEffect(() => {
     if (count === 4) {
-      setMeMori(true)
+      setIsDead(true)
       setModalOpen(true)
     }
   }, [count])
 
   return (
     <div className="container">
-      {meMori ? (
+      {isDead ? (
         <AvoDead />
       ) : (
         <AvoAlive
