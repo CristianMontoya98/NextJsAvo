@@ -15,16 +15,16 @@ const AnimatedHeader = ({
   onComplete,
 }: AnimatedHeaderProps) => (
   <Header size="huge" as="h1" onClick={onClick}>
-    Platzi
+    Avo
     <Transition
       animation="jiggle"
       visible={visible}
       duration={900}
       onComplete={onComplete}
     >
-      <Avocado size="58px" />
+      <Avocado size="58px" cursor="pointer" />
     </Transition>
-    Avo
+    Store
   </Header>
 )
 
