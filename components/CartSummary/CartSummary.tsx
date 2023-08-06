@@ -4,7 +4,6 @@ import { Segment, Button } from 'semantic-ui-react'
 type CartSummaryProps = {
   totalAmount: number
 }
-
 const CartSummary = ({ totalAmount }: CartSummaryProps) => {
   return (
     <Segment clearing size="large" as="section">

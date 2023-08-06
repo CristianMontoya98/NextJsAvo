@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Input, Icon, Transition } from 'semantic-ui-react'
-import { useCartMutations } from '@store/Cart'
+import { useCart, useCartMutations } from '@store/Cart'
 
 type AddToCartProps = {
   product: TProduct
@@ -26,7 +26,7 @@ const AddToCart = ({ product }: AddToCartProps) => {
   const [quantity, setQuantity] = useState(1)
   const [visible, setVisible] = useState(false)
   const { addToCart } = useCartMutations()
-
+  const { items, count } = useCart()
   const toggleMessage = () => {
     setTimeout(() => {
       setVisible(false)
@@ -51,6 +51,7 @@ const AddToCart = ({ product }: AddToCartProps) => {
           setError(`Error: ${err}` || 'Something went wrong')
           setLoading(false)
         })
+      console.log('sadas', items)
     }
   }
 

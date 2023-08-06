@@ -15,7 +15,6 @@ const CartItemList = ({
   loading = false,
 }: CartItemListProps) => {
   if (loading) return <Loader active inline="centered" />
-
   if (items.length === 0)
     return (
       <Message warning as="section">

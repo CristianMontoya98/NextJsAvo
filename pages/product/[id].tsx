@@ -13,13 +13,17 @@ const ProductPage = () => {
       window
         .fetch(`/api/avo/${query.id}`)
         .then((response) => response.json())
-        .then((data) => {
-          setProduct(data.data)
+        .then((data: TProduct) => {
+          setProduct(data)
         })
     }
   }, [query.id])
 
-  return <>{product == null ? null : <ProductSummary product={product} />}</>
+  return (
+    <Layout>
+      {product == null ? null : <ProductSummary product={product} />}
+    </Layout>
+  )
 }
 
 export default ProductPage

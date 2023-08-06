@@ -10,7 +10,6 @@ type ProductSummaryProps = {
 
 const ProductSummary = ({ product }: ProductSummaryProps) => (
   <>
-    {console.log(product)}
     <Item.Group as="section">
       <Item style={{ alignItems: 'center' }}>
         <Item.Image size="medium">
