@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../components/Header/Header'
+import React, { useState, useEffect } from 'react'
+import Layout from '@components/Layout/Layout'
+import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 import ProductList from '@components/ProductList/ProductList'
+
 const HomePage = () => {
-  const [products, setProducts] = useState<TProduct[]>([])
+  const [productList, setProductList] = useState<TProduct[]>([])
+
   useEffect(() => {
     window
       .fetch('/api/avo')
       .then((response) => response.json())
       .then(({ data }: TAPIAvoResponse) => {
-        setProducts(data)
+        setProductList(data)
       })
   }, [])
-  /*  */
+
   return (
-    <div>
-      <Header />
-      <ProductList products={products} />
-    </div>
+    <Layout>
+      <KawaiiHeader />
+      <ProductList products={productList} />
+    </Layout>
   )
 }
 

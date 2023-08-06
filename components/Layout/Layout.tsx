@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { Container } from 'semantic-ui-react'
 
 import Navbar from '@components/Navbar/Navbar'
